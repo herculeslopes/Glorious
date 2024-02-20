@@ -1,16 +1,12 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-import { HabitPreview } from './Features/Habits';
+import { StyleSheet, View } from "react-native";
+import List from "./Features/Habits/Screens/List";
+import { StatusBar } from "expo-status-bar";
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <View style={styles.habits}>
-        <Text style={styles.header}>Habits</Text>
-        <HabitPreview habit={{}} />
-      </View>
-
       <StatusBar style="auto" />
+      <List />
     </View>
   );
 }
@@ -21,16 +17,5 @@ const styles = StyleSheet.create({
     backgroundColor: '#121212',
     paddingTop: 20,
     paddingHorizontal: 10,
-    // alignItems: 'center',
-    // justifyContent: 'center',
   },
-
-  habits: {
-    backgroundColor: 'blue',
-  },
-
-  header: {
-    color: '#fff',
-    fontSize: 44,
-  }
 });
