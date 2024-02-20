@@ -1,10 +1,15 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
+import { HabitPreview } from './Features/Habits';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
+      <View style={styles.habits}>
+        <Text style={styles.header}>Habits</Text>
+        <HabitPreview habit={{}} />
+      </View>
+
       <StatusBar style="auto" />
     </View>
   );
@@ -13,8 +18,19 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: '#121212',
+    paddingTop: 20,
+    paddingHorizontal: 10,
+    // alignItems: 'center',
+    // justifyContent: 'center',
   },
+
+  habits: {
+    backgroundColor: 'blue',
+  },
+
+  header: {
+    color: '#fff',
+    fontSize: 44,
+  }
 });
