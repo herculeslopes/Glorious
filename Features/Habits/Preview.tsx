@@ -1,8 +1,8 @@
 import { Pressable, StyleSheet, Text, View } from "react-native";
 import { CategoryIconMap, Habit, Units } from "./types";
-import { Ionicons, FontAwesome5 } from "@expo/vector-icons";
+import { FontAwesome5 } from "@expo/vector-icons";
 
-const Preview: React.FC<{ habit: Habit }> = ({ habit }) => {
+const Preview: React.FC<{ habit: Habit, width: number }> = ({ habit, width }) => {
   const {
     title,
     category,
@@ -10,8 +10,12 @@ const Preview: React.FC<{ habit: Habit }> = ({ habit }) => {
     unit,
   } = habit;
 
+
+  
+
+
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, { width: width }]}>
       <View style={styles.pressableContainer}>
         <Pressable style={styles.pressable} android_ripple={{ color: '#777777' }}>
           <View>
@@ -33,9 +37,12 @@ const Preview: React.FC<{ habit: Habit }> = ({ habit }) => {
   )
 }
 
+// const componentWidth = ;
+
 const styles = StyleSheet.create({
   container: {
-    width: 100,
+    // width: 100,
+    width: '50%',
   },
   
   titleContainer: {
@@ -54,7 +61,8 @@ const styles = StyleSheet.create({
 
   pressable: {
     backgroundColor: '#242424',
-    height: 100,
+    // height: 100,
+    aspectRatio: 1,
 
     alignItems: 'center',
     justifyContent: 'center',
