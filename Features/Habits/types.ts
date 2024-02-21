@@ -1,6 +1,6 @@
 export type Habit = {
     id: number;
-    title: string;
+    name: string;
     category: Categories,
     aim: number,
     unit: Units,
@@ -28,4 +28,9 @@ export enum Units {
 export const CategoryIconMap: Record<Categories, string> = {
     [Categories.FITNESS]: 'dumbbell',
     [Categories.DIET]: 'utensils',
+}
+
+export enum Screens {
+    FORM = 'Form',
+    LIST = 'List',
 }

@@ -4,15 +4,11 @@ import { FontAwesome5 } from "@expo/vector-icons";
 
 const Preview: React.FC<{ habit: Habit, width: number }> = ({ habit, width }) => {
   const {
-    title,
+    name,
     category,
     aim,
     unit,
   } = habit;
-
-
-  
-
 
   return (
     <View style={[styles.container, { width: width }]}>
@@ -30,19 +26,17 @@ const Preview: React.FC<{ habit: Habit, width: number }> = ({ habit, width }) =>
       </View>
 
       <View style={styles.titleContainer}>
-        <Text style={styles.title}>{title}</Text>
+        <Text style={styles.title}>{name}</Text>
       </View>
     </View>
 
   )
 }
 
-// const componentWidth = ;
-
 const styles = StyleSheet.create({
   container: {
     // width: 100,
-    width: '50%',
+    // width: '50%',
   },
   
   titleContainer: {
