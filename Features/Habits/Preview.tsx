@@ -1,6 +1,6 @@
 import { Pressable, StyleSheet, Text, View } from "react-native";
 import { CategoryIconMap, Habit, Units } from "./types";
-import { FontAwesome5 } from "@expo/vector-icons";
+import { Ionicons, FontAwesome5 } from "@expo/vector-icons";
 
 const Preview: React.FC<{ habit: Habit, width: number }> = ({ habit, width }) => {
   const {
@@ -16,7 +16,8 @@ const Preview: React.FC<{ habit: Habit, width: number }> = ({ habit, width }) =>
         <Pressable style={styles.pressable} android_ripple={{ color: '#777777' }}>
           <View>
             {/* <Text style={styles.icon}>Icon</Text> */}
-            <FontAwesome5 name={CategoryIconMap[category]} size={32} color="#28E7FF" />
+            {/* <FontAwesome5 name={CategoryIconMap[category]} size={32} color="#28E7FF" /> */}
+            <Ionicons name={CategoryIconMap[category]} size={32} color="#28E7FF" />
           </View>
 
           <View style={styles.counterContainer}>

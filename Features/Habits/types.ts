@@ -26,8 +26,13 @@ export enum Units {
 }
 
 export const CategoryIconMap: Record<Categories, string> = {
-    [Categories.FITNESS]: 'dumbbell',
-    [Categories.DIET]: 'utensils',
+    // Font Awesome
+    // [Categories.FITNESS]: 'dumbbell',
+    // [Categories.DIET]: 'utensils',
+
+    // Ionicons
+    [Categories.FITNESS]: 'barbell',
+    [Categories.DIET]: 'restaurant',
 }
 
 export enum Screens {
