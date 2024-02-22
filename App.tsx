@@ -1,39 +1,34 @@
-import { Button, SafeAreaView, StyleSheet, View, StatusBar as NativeStatusBar } from "react-native";
-import List from "./Features/Habits/Screens/List";
+import { SafeAreaView, StyleSheet, View, StatusBar as NativeStatusBar } from "react-native";
+import { HabitsForm, HabitsList, HabitsStats } from "./Features/Habits/Screens";
 import { StatusBar } from "expo-status-bar";
-import { useState } from "react";
-import { Screens } from "./Features/Habits/types";
-import Form from "./Features/Habits/Screens/Form";
+
+import { ThemeProvider } from "styled-components";
+import { ThemeStyleMap, Themes } from "./Themes/types";
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+
+const Stack = createNativeStackNavigator();
 
 export default function App() {
-  const [screen, setScreen] = useState(Screens.LIST);
-
-  const renderScreen = () => {
-    switch (screen) {
-      case Screens.LIST:
-        return <List />
-
-      case Screens.FORM:
-        return <Form />
-
-      default:
-        return <></>;
-    }
-  }
-
-  const navTo = (screen: Screens) => {
-    setScreen(screen);
-  }
-  
   return (
-    <SafeAreaView style={styles.container}>
+    <>
       <StatusBar style="auto" />
-      <View style={styles.navMenu}>
-        <Button onPress={() => navTo(Screens.LIST)} title="list" color="#242424" />
-        <Button onPress={() => navTo(Screens.FORM)} title="form" color="#242424" />
-      </View>
-      {renderScreen()}
-    </SafeAreaView>
+      <ThemeProvider theme={ThemeStyleMap[Themes.DARK]}>
+        <NavigationContainer>
+          <Stack.Navigator initialRouteName="HabitsList">
+            <Stack.Screen name="HabitsList" component={HabitsList} />
+            <Stack.Screen name="HabitsStats" component={HabitsStats} />
+          </Stack.Navigator>
+          {/* <SafeAreaView style={styles.container}>
+            <View style={styles.navMenu}>
+            <Button onPress={() => navTo(Screens.LIST)} title="list" color="#242424" />
+            <Button onPress={() => navTo(Screens.FORM)} title="form" color="#242424" />
+            </View>
+            {renderScreen()}
+          </SafeAreaView> */}
+        </NavigationContainer>
+      </ThemeProvider >
+    </>
   );
 }
 
@@ -45,12 +40,4 @@ const styles = StyleSheet.create({
     paddingTop: NativeStatusBar.currentHeight,
     paddingHorizontal: 10,
   },
-
-  navMenu: {
-    flexDirection: 'row',
-    gap: 5,
-    // flex: 1,
-    // justifyContent: 'space-evenly',
-    // backgroundColor: 'blue',
-  }
 });

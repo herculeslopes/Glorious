@@ -10,6 +10,7 @@ export type Habit = {
 export enum Categories {
     FITNESS = 'Fitness',
     DIET = 'Die',
+    EDUCATIONAL = 'Educational',
 }
 
 export enum Frequencies {
@@ -33,6 +34,7 @@ export const CategoryIconMap: Record<Categories, string> = {
     // Ionicons
     [Categories.FITNESS]: 'barbell',
     [Categories.DIET]: 'restaurant',
+    [Categories.EDUCATIONAL]: 'book',
 }
 
 export enum Screens {

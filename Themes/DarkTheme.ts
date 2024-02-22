@@ -2,14 +2,17 @@ import { ThemeStyles } from "./types";
 
 const DarkTheme: ThemeStyles = {
     primary: {
-        bgColor: '#121212',
-        textColor: 'white',
-        linesColor: 'white',
+        background: '#121212',
+        text: 'white',
+        lines: 'white',
     },
     secondary: {
-        bgColor: 'white',
-        textColor: '#121212',
-        linesColor: '#121212',
+        background: '#242424',
+        text: '#121212',
+        lines: '#121212',
+    },
+    accent: {
+        default: '#28E7FF',
     }
 }
 

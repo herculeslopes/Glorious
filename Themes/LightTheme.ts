@@ -2,14 +2,17 @@ import { ThemeStyles } from "./types";
 
 const LightTheme: ThemeStyles = {
     primary: {
-        bgColor: 'white',
-        textColor: '#121212',
-        linesColor: '#121212',
+        background: 'white',
+        text: '#121212',
+        lines: '#121212',
     },
     secondary: {
-        bgColor: '#121212',
-        textColor: 'white',
-        linesColor: 'white',
+        background: '#121212',
+        text: 'white',
+        lines: 'white',
+    },
+    accent: {
+        default: '#28E7FF',
     }
 }
 

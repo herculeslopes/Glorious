@@ -1,22 +1,26 @@
 import DarkTheme from "./DarkTheme"
 import LightTheme from "./LightTheme"
 
-const enum Themes {
+export const enum Themes {
     DARK = 'Dark',
     LIGHT = 'Light',
     // DRACULAR = 'Dracula',
 }
 
 type StyleProperties = {
-    bgColor: string,
-    textColor: string,
-    linesColor: string,
+    background: string,
+    text: string,
+    lines: string,
     // accentColor: string,
 }
 
 export type ThemeStyles = {
     primary: StyleProperties,
     secondary: StyleProperties,
+    accent: {
+        default: string,
+        // hover: string,
+    }
 }
 
 export const ThemeStyleMap: Record<Themes, ThemeStyles> = {
