@@ -8,11 +8,12 @@ const DarkTheme: ThemeStyles = {
     },
     secondary: {
         background: '#242424',
-        text: '#121212',
-        lines: '#121212',
+        text: 'white',
+        lines: 'white',
     },
     accent: {
         default: '#28E7FF',
+        darker: '#00AFC6',
     }
 }
 

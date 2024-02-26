@@ -1,8 +1,14 @@
 import styled from "styled-components/native";
+import { RootStackParamList, ScreenProps } from "../../../types";
+import { NativeStackScreenProps } from "@react-navigation/native-stack";
 
-const Stats = () => {
+type Props = NativeStackScreenProps<RootStackParamList, 'HabitsStats'>;
+
+const Stats = ({ route }: Props) => {
+  const habitId = route.params.habitId;
+
   return <Wrapper>
-    <Title>Stats</Title>
+    <Title>Stats {habitId}</Title>
   </Wrapper>
 }
 

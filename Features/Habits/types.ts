@@ -1,5 +1,6 @@
 export type Habit = {
-    id: number;
+    id: string;
+    isMeasurable: boolean;
     name: string;
     category: Categories,
     aim: number,
@@ -9,7 +10,7 @@ export type Habit = {
 
 export enum Categories {
     FITNESS = 'Fitness',
-    DIET = 'Die',
+    DIET = 'Diet',
     EDUCATIONAL = 'Educational',
 }
 

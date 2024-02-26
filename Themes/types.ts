@@ -19,6 +19,7 @@ export type ThemeStyles = {
     secondary: StyleProperties,
     accent: {
         default: string,
+        darker: string,
         // hover: string,
     }
 }
