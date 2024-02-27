@@ -9,7 +9,8 @@ type Props = {
 const IconButton = ({ onPress }: Props) => {
   return (
     <Wrapper>
-      <StyledPressable onPress={() => onPress()} android_ripple={{ color: '#00AFC6' }}>
+      {/* <StyledPressable onPress={() => onPress()} android_ripple={{ color: '#00AFC6' }}> */}
+      <StyledPressable onPress={() => onPress()} android_ripple={{ color: '#dbdbdb' }}>
         <Icon name="add" />
       </StyledPressable>
     </Wrapper>
@@ -17,24 +18,26 @@ const IconButton = ({ onPress }: Props) => {
 }
 
 const Wrapper = styled.View<StyledProps>`
-  border-radius: 20px;
+  border-radius: 30px;
   overflow: hidden;
-  height: 30px;
+  height: 60px;
   aspect-ratio: 1;
 `
 
 const StyledPressable = styled.Pressable<StyledProps>`
   justify-content: center;
   align-items: center;
-  height: 30px;
+  height: 60px;
   aspect-ratio: 1;
   background-color: ${props => props.theme.accent.default};
-  
+  background-color: white;
 `
 
 const Icon = styled(Ionicons) <StyledProps>`
-  font-size: 25px;
-  color: ${props => props.theme.secondary.background};
+  font-size: 50px;
+  /* background-color: orange; */
+  /* color: ${props => props.theme.secondary.background}; */
+  color: #121212;
 `
 
 export default IconButton;

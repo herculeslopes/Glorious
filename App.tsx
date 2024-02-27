@@ -14,11 +14,26 @@ import { Query, QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BottomMenu } from "./Components";
 import { Provider } from "react-redux";
 import { store } from "./store";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+
+type BottomTabsParamList = {
+
+}
 
 const queryClient = new QueryClient();
+
 const Stack = createNativeStackNavigator<RootStackParamList>();
+const BottomTabs = createBottomTabNavigator<BottomTabsParamList>();
 
 // console.log('New')
+
+const HabitsOverview = () => {
+  return (
+    <BottomTabs.Navigator>
+      <Stack.Screen name="HabitsList" component={HabitsList} />
+    </BottomTabs.Navigator>
+  )
+}
 
 export default function App() {
   const [appIsLoading, setAppIsLoading] = useState(true);
@@ -66,8 +81,6 @@ export default function App() {
             </View>
             {renderScreen()}
           </SafeAreaView> */}
-
-              <BottomMenu />
             </NavigationContainer>
           </ThemeProvider >
         </QueryClientProvider>
